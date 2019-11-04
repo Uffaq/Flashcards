@@ -1,0 +1,31 @@
+<h1>User Profile</h1>
+{{# if hasErrors }}
+        <div class="alert alert-danger">
+            {{# each messages}}
+                <p>{{this}}</p>
+            {{/each}}
+        </div>
+    {{/if}}
+<form  action="/flashcards/beginner" method="POST">
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <hr>
+       <h4>Select level to play flashcards</h4>
+    <p>
+    <label class="radio" for="beginner">
+      <input type="radio" name="level" id="beginner" value="0" checked="checked" />Beginner
+    </label>
+
+    <label class="radio" for="advanced">
+      <input type="radio" name="level"  id="advanced" value="1" />Advanced
+    </label>
+    
+     <label class="radio" for="expert">
+      <input type="radio" name="level"  id="expert" value="2" />Expert
+    </label>
+    </p>
+     <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+     <button type="submit" class="btn btn-primary">Submit</button>   
+</form>
+</div>
+</div>

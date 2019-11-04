@@ -1,0 +1,26 @@
+<h2>Questions</h2>
+<div class="table-responsive">
+        <table class="table table-striped table-sm" id="mytable">
+          <thead>
+            <tr>
+                 <th>S#</th>
+                 <th>Questions</th>
+                 <th>Word</th>
+                 </thead>
+          <tbody> 
+              {{#if flashcard}}
+              {{#each flashcard}}
+               <tr>
+                  <td>{{flashcard_id}}</td> 
+                  <td>{{questions}}</td> 
+                  <td>{{word}}</td>
+                  <td><a href="javascript:void(0);" id="submit" class="btn btn-sm btn-danger btnSubmit" data-id="{{id}}">Submit</a></td>
+               </tr>
+               {{/each}}
+               {{else}}
+                <tr>
+              <td colspan="4"> No questions Found </td>
+            </tr>
+            {{/if}}
+          </tbody>
+        </table>   
